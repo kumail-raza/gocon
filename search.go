@@ -1,16 +1,16 @@
 package main
 
-
-import(
-	google "github.com/minhajuddinkhan/gocon/google"
-	"time"
+import (
 	"fmt"
+	"time"
+
+	google "github.com/minhajuddinkhan/gocon/google"
 )
 
 func main() {
 
 	start := time.Now()
-	results, err := google.SearchTimeout("golang", 85 * time.Millisecond)
+	results, err := google.Search("golang")
 	elapsed := time.Since(start)
 
 	fmt.Println(results)
