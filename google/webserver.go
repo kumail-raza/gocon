@@ -1,19 +1,20 @@
-package main
+package google
 
-import(
+import (
 	"fmt"
 	"log"
 	"net/http"
 )
 
-func main() {
+//ServeHTTP ServeHTTP
+func ServeHTTP() error {
 
 	http.HandleFunc("/hello", helloHandler)
 	fmt.Println("serving http server on localhost:3000")
-	log.Fatal(http.ListenAndServe(":3000", nil))
+	return (http.ListenAndServe(":3000", nil))
 }
 
-func helloHandler(w http.ResponseWriter, r *http.Request)  {
+func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 	log.Println("serving", r.URL)
 	fmt.Fprintf(w, "Hello, world!")
